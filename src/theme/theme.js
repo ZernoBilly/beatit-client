@@ -6,6 +6,8 @@ export default {
     grey: "#97CAEF",
     olive: "#CAFAFE",
     white: "#eaeef0",
+    dark: "#0A1414",
+    lightDark: "#3b4343",
   },
 
   mediaQueries: {
@@ -13,5 +15,9 @@ export default {
     sm: "only screen and (max-width: 960px)",
     md: "only screen and (max-width: 1280px)",
     //@media ${({ theme }) => theme.mediaQueries.md} {}
+  },
+
+  fontFamily: {
+    main: "'Righteous', cursive",
   },
 };

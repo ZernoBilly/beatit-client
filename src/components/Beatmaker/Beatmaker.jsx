@@ -7,9 +7,7 @@ import DrumMachine from "../DrumMachine/DrumMachine";
 
 const Beatmaker = () => {
   return (
-    <StyledMainContainer
-      style={{ width: "100vw", height: "100vh", backgroundColor: "red" }}
-    >
+    <StyledMainContainer>
       <Title />
       <DrumMachine />
     </StyledMainContainer>

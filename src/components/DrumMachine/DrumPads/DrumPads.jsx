@@ -4,17 +4,20 @@ import { StyledDrumPadsContainer } from "../../styled/StyledDrumPads/StyledDrumP
 
 import SinglePad from "./SinglePad/SinglePad";
 
-const DrumPads = ({ pads1 }) => {
+const DrumPads = ({ pads, setPads, currentStep, play }) => {
   return (
     <StyledDrumPadsContainer>
-      <SinglePad disabled={true} />
-      <SinglePad />
-      <SinglePad />
-      <SinglePad disabled={true} />
-      <SinglePad />
-      <SinglePad disabled={false} />
-      <SinglePad />
-      <SinglePad />
+      {pads.map((pad, idx) => (
+        <SinglePad
+          index={pad.index}
+          active={pad.active}
+          pads={pads}
+          setPads={setPads}
+          key={idx}
+          currentStep={currentStep}
+          play={play}
+        />
+      ))}
     </StyledDrumPadsContainer>
   );
 };

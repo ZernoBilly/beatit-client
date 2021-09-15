@@ -3,11 +3,23 @@ import React from "react";
 import { StyledSinglePad } from "../../../styled/StyledDrumPads/StyledSinglePad";
 import theme from "../../../../theme/theme";
 
-const SinglePad = ({ disabled }) => {
+const SinglePad = ({ index, active, pads, setPads, currentStep, play }) => {
+  const handlePadClick = () => {
+    const newArray = [...pads];
+    newArray[index].active = !newArray[index].active;
+    setPads(newArray);
+  };
+
   return (
     <>
       <StyledSinglePad
-        color={disabled ? theme.palette.white : theme.palette.green}
+        currentStepColor={
+          index === currentStep && play
+            ? theme.palette.green
+            : theme.palette.white
+        }
+        activeStepColor={active ? theme.palette.green : theme.palette.white}
+        onClick={handlePadClick}
       ></StyledSinglePad>
     </>
   );
