@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 export const StyledControls = styled.div`
-  margin-top: 3rem;
+  margin-bottom: 1rem;
   display: flex;
   justify-content: space-between;
   align-items: center;

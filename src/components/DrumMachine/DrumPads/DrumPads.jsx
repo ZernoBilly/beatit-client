@@ -7,12 +7,35 @@ import { StyledSoundDownButton } from "../../styled/StyledDrumPads/StyledSoundDo
 
 import SinglePad from "./SinglePad/SinglePad";
 
-const DrumPads = ({ pads, setPads, currentStep, play }) => {
+const DrumPads = ({
+  pads,
+  setPads,
+  currentStep,
+  play,
+  selectedSound,
+  setSelectedSound,
+  sounds,
+}) => {
+  const handleSoundChange = (value) => {
+    const newIndex = sounds.indexOf(selectedSound) + value;
+    if (newIndex > sounds.length - 1) {
+      setSelectedSound(sounds[0]);
+    } else if (newIndex < 0) {
+      setSelectedSound(sounds[sounds.length - 1]);
+    } else {
+      setSelectedSound(sounds[newIndex]);
+    }
+  };
+
   return (
     <StyledDrumPadsContainer>
       <StyledSoundButtonContainer>
-        <StyledSoundUpButton></StyledSoundUpButton>
-        <StyledSoundDownButton></StyledSoundDownButton>
+        <StyledSoundUpButton
+          onClick={() => handleSoundChange(1)}
+        ></StyledSoundUpButton>
+        <StyledSoundDownButton
+          onClick={() => handleSoundChange(-1)}
+        ></StyledSoundDownButton>
       </StyledSoundButtonContainer>
       {pads.map((pad, idx) => (
         <SinglePad
@@ -23,6 +46,7 @@ const DrumPads = ({ pads, setPads, currentStep, play }) => {
           key={idx}
           currentStep={currentStep}
           play={play}
+          selectedSound={selectedSound}
         />
       ))}
     </StyledDrumPadsContainer>

@@ -7,7 +7,7 @@ export const StyledDisplayContainer = styled.div`
   text-align: center;
   display: flex;
   flex-direction: column;
-  justify-content: space-evenly;
+  justify-content: center;
   align-items: center;
   position: relative;
   border-radius: 0.8rem;

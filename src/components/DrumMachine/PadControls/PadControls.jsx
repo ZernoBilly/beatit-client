@@ -14,17 +14,14 @@ const PadControls = ({ pads, setPads, setPlay }) => {
           active: false,
         },
       ]);
-      setPlay(false);
     }
   };
-  console.log(pads);
 
   const handleRemoveClick = () => {
     if (pads.length > 1) {
       const newPads = [...pads];
       newPads.pop();
       setPads(newPads);
-      setPlay(false);
     }
   };
   return (

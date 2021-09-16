@@ -5,9 +5,13 @@ import { StyledPlayButton } from "../../styled/StyledControls/StyledPlayButton";
 import { StyledStopButton } from "../../styled/StyledControls/StyledStopButton";
 import { StyledControlText } from "../../styled/StyledControls/StyledConrtrolText";
 
-import theme from "../../../theme/theme";
-
-const Controls = ({ play, setPlay, setCurrentStep1, setCurrentStep2 }) => {
+const Controls = ({
+  play,
+  setPlay,
+  setCurrentStep1,
+  setCurrentStep2,
+  setCurrentStep3,
+}) => {
   const handlePlayClick = () => {
     setPlay(!play);
   };
@@ -15,6 +19,7 @@ const Controls = ({ play, setPlay, setCurrentStep1, setCurrentStep2 }) => {
   const handleStopClick = () => {
     setCurrentStep1(0);
     setCurrentStep2(0);
+    setCurrentStep3(0);
     setPlay(!play);
   };
 
