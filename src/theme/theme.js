@@ -6,6 +6,7 @@ export default {
     grey: "#97CAEF",
     olive: "#CAFAFE",
     white: "#eaeef0",
+    lightWhite: "#f2f6f7",
     dark: "#0A1414",
     lightDark: "#3b4343",
   },
@@ -19,5 +20,6 @@ export default {
 
   fontFamily: {
     main: "'Righteous', cursive",
+    secondary: "'Orbitron', sans-serif",
   },
 };

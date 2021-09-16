@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 
 import { StyledSinglePad } from "../../../styled/StyledDrumPads/StyledSinglePad";
 import theme from "../../../../theme/theme";
@@ -10,6 +10,17 @@ const SinglePad = ({ index, active, pads, setPads, currentStep, play }) => {
     setPads(newArray);
   };
 
+  const playSound = () => {
+    const sample = document.getElementById("sound");
+    sample.play();
+  };
+
+  useEffect(() => {
+    if (index === currentStep && active) {
+      playSound();
+    }
+  }, [currentStep, play]);
+
   return (
     <>
       <StyledSinglePad
@@ -20,7 +31,9 @@ const SinglePad = ({ index, active, pads, setPads, currentStep, play }) => {
         }
         activeStepColor={active ? theme.palette.green : theme.palette.white}
         onClick={handlePadClick}
-      ></StyledSinglePad>
+      >
+        <audio id="sound" />
+      </StyledSinglePad>
     </>
   );
 };

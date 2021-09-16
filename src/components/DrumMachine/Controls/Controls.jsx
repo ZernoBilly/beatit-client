@@ -19,9 +19,7 @@ const Controls = ({ play, setPlay, setCurrentStep1, setCurrentStep2 }) => {
   };
 
   return (
-    <StyledControls
-      playColor={play ? theme.palette.green : theme.palette.white}
-    >
+    <StyledControls>
       <StyledStopButton
         onClick={handleStopClick}
         disabled={play ? false : true}

@@ -1,6 +1,7 @@
 import styled from "styled-components";
 
 export const StyledPadControls = styled.div`
+  margin-bottom: 1rem;
   display: flex;
   justify-content: space-around;
   align-items: center;

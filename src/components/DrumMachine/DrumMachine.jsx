@@ -7,13 +7,11 @@ import PadControls from "./PadControls/PadControls";
 
 import { padSet1, padSet2 } from "../../data/padSet1";
 
-const DrumMachine = () => {
+const DrumMachine = ({ play, setPlay, tempo, setTempo }) => {
   const [pads1, setPads1] = useState(padSet1);
   const [pads2, setPads2] = useState(padSet2);
   const [currentStep1, setCurrentStep1] = useState(0);
   const [currentStep2, setCurrentStep2] = useState(0);
-  const [play, setPlay] = useState(false);
-  const [tempo, setTempo] = useState(1000);
 
   useEffect(() => {
     if (play) {
@@ -27,7 +25,7 @@ const DrumMachine = () => {
 
       return () => clearInterval(interval);
     }
-  }, [currentStep1, play]);
+  }, [currentStep1, play, tempo]);
 
   useEffect(() => {
     if (play) {
@@ -41,7 +39,9 @@ const DrumMachine = () => {
 
       return () => clearInterval(interval);
     }
-  }, [currentStep2, play]);
+  }, [currentStep2, play, tempo]);
+
+  console.log(tempo);
 
   return (
     <StyledDrumMachine>
@@ -58,7 +58,7 @@ const DrumMachine = () => {
         currentStep={currentStep2}
         play={play}
       />
-      <PadControls />
+      <PadControls pads={pads2} setPads={setPads2} setPlay={setPlay} />
       <Controls
         play={play}
         setPlay={setPlay}

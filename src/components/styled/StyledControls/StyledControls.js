@@ -11,7 +11,7 @@ export const StyledControls = styled.div`
   background-color: ${(props) => props.theme.palette.white};
   position: relative;
   border: 2px solid;
-  border-color: ${(props) => props.playColor};
+  border-color: ${(props) => props.theme.palette.white};
   border-radius: 1rem;
   transition: 0.2s;
   box-shadow: -7px -7px 15px rgba(255, 255, 255, 1),

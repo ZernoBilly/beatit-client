@@ -6,13 +6,16 @@ import { StyledPadControlText } from "../../styled/StyledDrumPads/StyledPadContr
 
 const PadControls = ({ pads, setPads, setPlay }) => {
   const handleAddClick = () => {
-    setPads([
-      ...pads,
-      {
-        index: pads.length,
-        active: false,
-      },
-    ]);
+    if (pads.length < 8) {
+      setPads([
+        ...pads,
+        {
+          index: pads.length,
+          active: false,
+        },
+      ]);
+      setPlay(false);
+    }
   };
   console.log(pads);
 
