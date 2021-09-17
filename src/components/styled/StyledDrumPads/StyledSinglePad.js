@@ -13,7 +13,6 @@ export const StyledSinglePad = styled.button`
   box-shadow: -8px -8px 15px rgba(255, 255, 255, 1),
     8px 8px 15px rgba(0, 0, 0, 0.2), inset 3px 3px 5px rgba(0, 0, 0, 0.1),
     inset -1px -1px 5px rgba(255, 255, 255, 1);
-  transition: 0.2s;
 
   &::before {
     content: "";
