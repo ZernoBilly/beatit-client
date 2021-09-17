@@ -7,6 +7,7 @@ export default {
     olive: "#CAFAFE",
     white: "#eaeef0",
     lightWhite: "#f2f6f7",
+    darkWhite: "#dcdfe0",
     dark: "#0A1414",
     lightDark: "#3b4343",
   },

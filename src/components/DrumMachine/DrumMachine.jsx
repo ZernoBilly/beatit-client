@@ -5,7 +5,7 @@ import DrumPads from "./DrumPads/DrumPads";
 import Controls from "./Controls/Controls";
 import PadControls from "./PadControls/PadControls";
 
-import { padSet1, padSet2, padSet3 } from "../../data/padSet1";
+import { padset, padSet1, padSet2, padSet3 } from "../../data/padSet1";
 
 const DrumMachine = ({
   play,
