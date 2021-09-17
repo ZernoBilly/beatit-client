@@ -19,12 +19,27 @@ const DrumMachine = ({
   setSelectedSound3,
   sounds,
 }) => {
+  //const [pads, setPads] = useState(padset);
   const [pads1, setPads1] = useState(padSet1);
   const [pads2, setPads2] = useState(padSet2);
   const [pads3, setPads3] = useState(padSet3);
   const [currentStep1, setCurrentStep1] = useState(0);
   const [currentStep2, setCurrentStep2] = useState(0);
   const [currentStep3, setCurrentStep3] = useState(0);
+
+  // useEffect(() => {
+  //   if (play) {
+  //     const interval = setInterval(() => {
+  //       if (currentStep1 < pads[0].padSet1.length - 1) {
+  //         setCurrentStep1((currentStep1) => currentStep1 + 1);
+  //       } else {
+  //         setCurrentStep1(0);
+  //       }
+  //     }, tempo);
+
+  //     return () => clearInterval(interval);
+  //   }
+  // }, [currentStep1, play, tempo]);
 
   useEffect(() => {
     if (play) {
@@ -68,6 +83,9 @@ const DrumMachine = ({
     }
   }, [currentStep3, play, tempo]);
 
+  // console.log(pads1);
+  // console.log(pads[0].padSet1);
+
   return (
     <StyledDrumMachine>
       <DrumPads
@@ -79,7 +97,7 @@ const DrumMachine = ({
         setSelectedSound={setSelectedSound1}
         sounds={sounds}
       />
-      <PadControls pads={pads1} setPads={setPads1} setPlay={setPlay} />
+      <PadControls pads={pads1} setPads={setPads1} />
       <DrumPads
         pads={pads2}
         setPads={setPads2}
@@ -89,7 +107,7 @@ const DrumMachine = ({
         setSelectedSound={setSelectedSound2}
         sounds={sounds}
       />
-      <PadControls pads={pads2} setPads={setPads2} setPlay={setPlay} />
+      <PadControls pads={pads2} setPads={setPads2} />
       <DrumPads
         pads={pads3}
         setPads={setPads3}
@@ -99,7 +117,7 @@ const DrumMachine = ({
         setSelectedSound={setSelectedSound3}
         sounds={sounds}
       />
-      <PadControls pads={pads3} setPads={setPads3} setPlay={setPlay} />
+      <PadControls pads={pads3} setPads={setPads3} />
       <Controls
         play={play}
         setPlay={setPlay}

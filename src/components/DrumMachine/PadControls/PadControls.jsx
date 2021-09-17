@@ -4,7 +4,7 @@ import { StyledPadControls } from "../../styled/StyledDrumPads/StyledPadControls
 import { StyledPadControlAddButton } from "../../styled/StyledDrumPads/StyledPadControlAddButton";
 import { StyledPadControlText } from "../../styled/StyledDrumPads/StyledPadControlText";
 
-const PadControls = ({ pads, setPads, setPlay }) => {
+const PadControls = ({ pads, setPads }) => {
   const handleAddClick = () => {
     if (pads.length < 8) {
       setPads([

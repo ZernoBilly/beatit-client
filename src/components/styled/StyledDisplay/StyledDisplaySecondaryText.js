@@ -6,4 +6,5 @@ export const StyledDisplaySecondaryText = styled.h1`
   font-weight: 200;
   color: ${(props) => props.playColor};
   font-family: ${(props) => props.theme.fontFamily.secondary};
+  letter-spacing: 1px;
 `;
