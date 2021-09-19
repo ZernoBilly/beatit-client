@@ -5,7 +5,7 @@ import DrumPads from "./DrumPads/DrumPads";
 import Controls from "./Controls/Controls";
 import PadControls from "./PadControls/PadControls";
 
-import { padset, padSet1, padSet2, padSet3 } from "../../data/padSet1";
+import { padSet1, padSet2, padSet3 } from "../../data/padSet1";
 
 const DrumMachine = ({
   play,
@@ -19,27 +19,12 @@ const DrumMachine = ({
   setSelectedSound3,
   sounds,
 }) => {
-  //const [pads, setPads] = useState(padset);
   const [pads1, setPads1] = useState(padSet1);
   const [pads2, setPads2] = useState(padSet2);
   const [pads3, setPads3] = useState(padSet3);
   const [currentStep1, setCurrentStep1] = useState(0);
   const [currentStep2, setCurrentStep2] = useState(0);
   const [currentStep3, setCurrentStep3] = useState(0);
-
-  // useEffect(() => {
-  //   if (play) {
-  //     const interval = setInterval(() => {
-  //       if (currentStep1 < pads[0].padSet1.length - 1) {
-  //         setCurrentStep1((currentStep1) => currentStep1 + 1);
-  //       } else {
-  //         setCurrentStep1(0);
-  //       }
-  //     }, tempo);
-
-  //     return () => clearInterval(interval);
-  //   }
-  // }, [currentStep1, play, tempo]);
 
   useEffect(() => {
     if (play) {
@@ -82,9 +67,6 @@ const DrumMachine = ({
       return () => clearInterval(interval);
     }
   }, [currentStep3, play, tempo]);
-
-  // console.log(pads1);
-  // console.log(pads[0].padSet1);
 
   return (
     <StyledDrumMachine>
